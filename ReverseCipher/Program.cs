@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Text;
 
 
@@ -23,6 +24,8 @@ namespace ReverseCipher
             };
             string f = Encoding.UTF8.GetString(BaseFlag, 0, BaseFlag.Length);
             Console.WriteLine("La clef est : {0}", f);
+            var path = @"./Flag.txt";
+            File.WriteAllText(path,f);
             Console.WriteLine("Press Enter to quit");
             while (Console.ReadKey().Key != ConsoleKey.Enter) ;
         }
